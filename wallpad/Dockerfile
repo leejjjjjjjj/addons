@@ -17,7 +17,6 @@ WORKDIR /share
 COPY package.json /
 RUN npm install
 RUN npm init -f
-RUN npm install
 RUN npm install serialport --build-from-source=serialport 
 
 
