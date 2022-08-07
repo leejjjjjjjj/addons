@@ -12,7 +12,8 @@ COPY js /js
 # Install requirements for add-on
 WORKDIR /share
 COPY package.json /
-RUN apk add --no-cache jq npm make gcc g++ python3 linux-headers udev && \
+RUN npm install
+    apk add --no-cache jq npm make gcc g++ python3 linux-headers udev && \
     npm init -f && \
     npm install mqtt && \
     npm install serialport --build-from-source=serialport 
