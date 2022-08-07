@@ -16,9 +16,9 @@ RUN apk add --no-cache jq npm make gcc g++ python3 linux-headers udev
 WORKDIR /share
 COPY package.json /
 RUN npm install
-    npm init -f && \
-    npm install mqtt && \
-    npm install serialport --build-from-source=serialport 
+RUN npm init -f
+RUN npm install
+RUN npm install serialport --build-from-source=serialport 
 
 
 RUN chmod a+x /run.sh
